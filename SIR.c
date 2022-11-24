@@ -149,7 +149,7 @@ void dequeue()
 
 	// Providing bad values
 	events[0].id = -1;
-	events[0].day = 302;
+	events[0].day = 502;
 	events[0].action = 'e';
 	
 	if(event_length != 1)
