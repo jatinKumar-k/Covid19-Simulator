@@ -1,3 +1,11 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -6,9 +14,9 @@
 // Constant Parameters
 #define MAX_VERTICES 10000
 #define MAX_EDGES 3000
-#define DAYS 300
+#define DAYS 500
 #define TAU 0.90
-#define GAMMA 0.05
+#define GAMMA 0.02
 #define CAPACITY 50000
 
 /*
@@ -57,7 +65,6 @@ struct vertex
 	int pred_inf_time; // Pedicted infection time
 	int rec_time;  // Recovery time
 
-	struct l_node *adjacent;
 }
 graph[MAX_VERTICES];
 
@@ -172,8 +179,7 @@ void create_graph(int vertices)
 		graph[i].status = 'S';
 		graph[i].pred_inf_time = DAYS+1;
 		graph[i].rec_time = DAYS+1;
-		graph[i].adjacent = NULL;
-	
+
 		// Making a directed graph by joining the links
 		int node_neighbours[MAX_EDGES];
 		for (int j = 0; j < MAX_EDGES; ++j)
